@@ -2,8 +2,7 @@
   <div id="app">
     <h1>Vue Color Picker Wheel</h1>
     <p>
-      A Vue color picker component based on the Farbtastic jQuery Color Picker
-      plug-in.
+     
     </p>
     <color-picker v-model="color"></color-picker>
     <div class="selected-color-info">

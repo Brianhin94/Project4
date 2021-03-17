@@ -6,7 +6,7 @@
     </p>
     <color-picker v-model="color"></color-picker>
     <div class="selected-color-info">
-      <p>Selected color:</p>
+      <p>Copy this color for your code!:</p>
       <svg height="32" width="32">
         <circle cx="16" cy="16" r="15" :fill="color" />
       </svg>
@@ -33,7 +33,6 @@ export default {
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Barlow);
-
 #app {
   font-family: "Barlow", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,11 +40,13 @@ export default {
   color: #2c3e50;
   text-align: center;
   margin-top: 20px;
+  background-color: gray;
 }
 
 #color-wheel {
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .selected-color-info {

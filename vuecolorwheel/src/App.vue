@@ -3,12 +3,17 @@
     <h1>Vue Color Picker Wheel</h1>
     <color-picker v-model="color"></color-picker>
     <div class="selected-color-info">
-      <p>Copy this color for your code!:</p>
+      <p>Copy this color for your code!</p>
+
       <svg height="32" width="32">
         <circle cx="16" cy="16" r="15" :fill="color" />
       </svg>
     </div>
     <p>{{ color }}</p>
+    <button type="button"
+ v-clipboard:copy="message"
+ v-clipboard:success="onCopy"
+ v-clipboard:error="onError">Copy!</button>
     <h8
       ><p>
         Find more of my work on
@@ -35,18 +40,22 @@
 <script>
 import ColorPicker from "vue-color-picker-wheel";
 
+
 export default {
   name: "App",
   components: {
     ColorPicker,
+    
   },
   data() {
     return {
       color: "#ff6600",
     };
   },
-};
+}
 </script>
+
+
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Barlow);
@@ -57,22 +66,25 @@ export default {
   color: #2c3e50;
   text-align: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 0.01em;
   background-image: linear-gradient(to right, #c75509, #1668b5);
-  cursor: inherit;
 }
 
 #color-wheel {
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
+ 
 
 .selected-color-info {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  font-size: 20px;
   font-size-adjust: inherit;
+  font-style: bold;
 }
 </style>
 
